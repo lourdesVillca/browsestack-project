@@ -17,8 +17,8 @@ public class JavaSample {
     public static void main(String[] args) throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        System.getProperties().put("https.proxyHost", "172.31.90.162");
-        System.getProperties().put("https.proxyPort", "8080");
+        //System.getProperties().put("https.proxyHost", "172.31.90.162");
+        //System.getProperties().put("https.proxyPort", "8080");
 
         caps.setCapability("browser", "chrome");
         caps.setCapability("browserstack.debug", "true");
