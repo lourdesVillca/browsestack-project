@@ -1,7 +1,9 @@
 package org.fundacionjala.browserstack;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +12,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class JavaSample {
 
-    public static final String USERNAME = "lourdesvillca1";
-    public static final String AUTOMATE_KEY = "sqxpzNKfTCqmPKkpB9mH";
-    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
-    public static void main(String[] args) throws Exception {
-
+    @Test
+    public void test01() throws MalformedURLException {
+        String USERNAME = System.getProperty("browserstack.username") != null? System.getProperty("browserstack.username"): "miguelaldobalder1";
+        String AUTOMATE_KEY = System.getProperty("browserstack.key") != null ? System.getProperty("browserstack.key") : "FsyQMJ7r4yuvjo1wQfEa";
+        final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
         DesiredCapabilities caps = new DesiredCapabilities();
         //System.getProperties().put("https.proxyHost", "172.31.90.162");
         //System.getProperties().put("https.proxyPort", "8080");
